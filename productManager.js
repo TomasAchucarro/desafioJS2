@@ -39,7 +39,7 @@ class ProductManager {
       this.#path,
       JSON.stringify(updatedProducts, null, "\t")
     );
-    return console.log("Producto Eliminado")
+    return console.log("Producto Eliminado");
   };
 
   updateProduct = async (id, updatedData) => {
@@ -71,46 +71,47 @@ class ProductManager {
 }
 
 const product = new ProductManager();
-// product.addProduct(
-//   "Leche",
-//   "Leche Entera Sachet 1L",
-//   "$150",
-//   "https://www.multifood.com.ar/images/000Z-006-003-00156189Z-006-003-001-LecheSachetEntera.png",
-//   "2000",
-//   "5"
-// );
-// product.addProduct(
-//   "Gaseosa",
-//   "Gaseosa de Pomelo",
-//   "$120",
-//   "https://cdn11.bigcommerce.com/s-3stx4pub31/images/stencil/1280x1280/products/962/2696/unnamed__06461.1656358317.jpg?c=2",
-//   "2001",
-//   "5"
-// );
-// product.addProduct(
-//   "Aceite",
-//   "Aceite Natural 0,9L",
-//   "$90",
-//   "https://jumboargentina.vtexassets.com/arquivos/ids/687695/Aceite-De-Girasol-Natura-900-Ml-1-26543.jpg?v=637799421695770000",
-//   "2002",
-//   "3"
-// );
-// product.addProduct(
-//   "Huevo",
-//   "Huevo Blanco 6u",
-//   "$75",
-//   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHv6cwQ1hfREQ6yCIpKqRrsmYpwdZL_3C9DA&usqp=CAU",
-//   "2003",
-//   "8"
-// )
-// product.addProduct(
-//   "Fideo",
-//   "Fideo Tallarin 500g",
-//   "$175",
-//   "https://carrefourar.vtexassets.com/arquivos/ids/181705/7790070318657_02.jpg?v=637468587775700000",
-//   "2004",
-//   "3"
-// )
+product.addProduct(
+  "Leche",
+  "Leche Entera Sachet 1L",
+  "$150",
+  "https://www.multifood.com.ar/images/000Z-006-003-00156189Z-006-003-001-LecheSachetEntera.png",
+  "2000",
+  "5"
+);
+product.addProduct(
+  "Gaseosa",
+  "Gaseosa de Pomelo",
+  "$120",
+  "https://cdn11.bigcommerce.com/s-3stx4pub31/images/stencil/1280x1280/products/962/2696/unnamed__06461.1656358317.jpg?c=2",
+  "2001",
+  "5"
+);
+product.addProduct(
+  "Aceite",
+  "Aceite Natural 0,9L",
+  "$90",
+  "https://jumboargentina.vtexassets.com/arquivos/ids/687695/Aceite-De-Girasol-Natura-900-Ml-1-26543.jpg?v=637799421695770000",
+  "2002",
+  "3"
+);
+product.addProduct(
+  "Huevo",
+  "Huevo Blanco 6u",
+  "$75",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHv6cwQ1hfREQ6yCIpKqRrsmYpwdZL_3C9DA&usqp=CAU",
+  "2003",
+  "8"
+)
+product.addProduct(
+  "Fideo",
+  "Fideo Tallarin 500g",
+  "$175",
+  "https://carrefourar.vtexassets.com/arquivos/ids/181705/7790070318657_02.jpg?v=637468587775700000",
+  "2004",
+  "3"
+)
+
 // const updatedLeche = {
 //   title: "Leche Descremada",
 //   price: "$120",
@@ -119,4 +120,5 @@ const product = new ProductManager();
 
 // const getProduct = await product.getProductById(1);
 // console.log(getProduct);
-console.log(await product.deleteProduct("2001"))
+
+// console.log(await product.deleteProduct("2001"))
