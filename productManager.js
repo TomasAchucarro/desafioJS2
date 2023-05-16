@@ -2,20 +2,22 @@ import fs from "fs";
 
 class ProductManager {
   #path;
+  #products;
   constructor() {
     this.#path = "./products.json";
+    this.#products = [];
   }
   #getProducts = async () => {
     return JSON.parse(await fs.promises.readFile(this.#path, "utf-8"));
   };
 
   addProduct = async (title, description, price, thumbnail, code, stock) => {
-    const products = await this.#getProducts()
+    // const products = await this.#products
     const id =
-      products.length > 0
-        ? products[products.length - 1].id + 1
+      this.#products.length > 0
+        ? this.#products[this.#products.length - 1].id + 1
         : 1;
-    products.push({
+    this.#products.push({
       id: id,
       title,
       description,
@@ -26,17 +28,18 @@ class ProductManager {
     });
     await fs.promises.writeFile(
       this.#path,
-      JSON.stringify(products, null, "\t")
+      JSON.stringify(this.#products, null, "\t")
     );
   };
 
   deleteProduct = async (code) => {
     const products = await this.#getProducts();
     const updatedProducts = products.filter((product) => product.code !== code);
-    return await fs.promises.writeFile(
+    await fs.promises.writeFile(
       this.#path,
       JSON.stringify(updatedProducts, null, "\t")
     );
+    return console.log("Producto Eliminado")
   };
 
   updateProduct = async (id, updatedData) => {
@@ -68,14 +71,14 @@ class ProductManager {
 }
 
 const product = new ProductManager();
-product.addProduct(
-  "Leche",
-  "Leche Entera Sachet 1L",
-  "$150",
-  "https://www.multifood.com.ar/images/000Z-006-003-00156189Z-006-003-001-LecheSachetEntera.png",
-  "2000",
-  "5"
-);
+// product.addProduct(
+//   "Leche",
+//   "Leche Entera Sachet 1L",
+//   "$150",
+//   "https://www.multifood.com.ar/images/000Z-006-003-00156189Z-006-003-001-LecheSachetEntera.png",
+//   "2000",
+//   "5"
+// );
 // product.addProduct(
 //   "Gaseosa",
 //   "Gaseosa de Pomelo",
@@ -108,12 +111,12 @@ product.addProduct(
 //   "2004",
 //   "3"
 // )
-// const updatedData = {
+// const updatedLeche = {
 //   title: "Leche Descremada",
 //   price: "$120",
 // };
-
-//  product.updateProduct(1, updatedData);
+// product.updateProduct(1, updatedLeche)
 
 // const getProduct = await product.getProductById(1);
 // console.log(getProduct);
+console.log(await product.deleteProduct("2001"))
