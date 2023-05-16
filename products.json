@@ -1,0 +1,20 @@
+[
+	{
+		"id": 1,
+		"title": "Gaseosa",
+		"description": "Gaseosa de Pomelo",
+		"price": "$120",
+		"thumbnail": "https://cdn11.bigcommerce.com/s-3stx4pub31/images/stencil/1280x1280/products/962/2696/unnamed__06461.1656358317.jpg?c=2",
+		"code": "2001",
+		"stock": "5"
+	},
+	{
+		"id": 2,
+		"title": "Leche",
+		"description": "Leche Entera Sachet 1L",
+		"price": "$150",
+		"thumbnail": "https://www.multifood.com.ar/images/000Z-006-003-00156189Z-006-003-001-LecheSachetEntera.png",
+		"code": "2000",
+		"stock": "5"
+	}
+]
