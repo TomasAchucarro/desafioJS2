@@ -12,7 +12,6 @@ class ProductManager {
   };
 
   addProduct = async (title, description, price, thumbnail, code, stock) => {
-    // const products = await this.#products
     const id =
       this.#products.length > 0
         ? this.#products[this.#products.length - 1].id + 1
